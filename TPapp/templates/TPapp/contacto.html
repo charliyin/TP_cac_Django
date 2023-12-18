@@ -8,19 +8,16 @@
     <body>   
         {% block logueo %} {% endblock %}        
         {% block pagina %}<a href="{% url 'index' %}">Home</a>{% endblock %}
-                <main>
-                    <form id="formulario" action="" class="formulario">
-                        <label for="nombre" class="formulario__label">Nombre completo</label>
-                        <input name="nombre" required type="text" id="nombre" class="formulario__input" placeholder="Ingrese su nombre completo">
-                        <label for="correo" class="formulario__label">Correo electrónico</label>
-                        <input name="correo" required type="" id="correo"  class="formulario__input" placeholder="Ingrese su correo">
-                        <label for="asunto" class="formulario__label">Asunto</label>
-                        <input name="asunto" required type="texto" id="asunto"  class="formulario__input" placeholder="Título del motivo de contacto">
-                        <label for="mensaje" class="formulario__label">Mensaje</label>
-                        <textarea id="mensaje" name="mensaje" class="formulario__textarea" cols="30" rows="10" maxlength="400" placeholder="Escriba aquí su mensaje"></textarea>
+                <main class="formulario" >
+                    <form action="" class="formulario_label" method="post">
+                        <!-- <label for="nombre" class="formulario_label"> -->
+                        {% csrf_token %}
+                        {{ form }}
+                        <!-- </label> -->
+                        <br>
                         <button type="submit" class="btn primary full">Enviar mensaje</button>
                     </form>
-                    <a href="mailto:c.a.r.c.h.u.s.s01@gmail.com" id="trucazo">Mail</a>
+                    {{ mensaje }}
                 </main>
 
             {% endblock %}

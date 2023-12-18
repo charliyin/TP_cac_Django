@@ -10,10 +10,6 @@ body {
     width: auto;
 }
 
-#trucazo {
-	opacity: 0;
-}
-
 #contenido {
 	position: relative;
 	min-height: 100vh;
@@ -127,10 +123,6 @@ h5{
 	line-height: 25px;
 	padding: 0 40px 0 10px;
 	transition: .3s ease all;
-}
-
-#trucazo {
-	opacity: 0;
 }
 
 #Pie_de_página{

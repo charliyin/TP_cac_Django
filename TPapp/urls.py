@@ -1,5 +1,5 @@
 from django.urls import path
-from .views import index, contacto, remuneraciones, personal, exit, trabajadores
+from .views import index, contacto, remuneraciones, personal, exit
 from django.conf import settings
 from django.conf.urls.static import static
 
@@ -10,7 +10,6 @@ urlpatterns = [
     path('personal/',personal, name="personal"),
     path('remuneraciones/',remuneraciones, name="remuneraciones"),
     path('logout/',exit, name="exit"),
-    path('trabajadores/',trabajadores, name="trabajadores"),
 ]
 
 urlpatterns+=static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
