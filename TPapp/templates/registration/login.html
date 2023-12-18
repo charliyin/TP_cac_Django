@@ -1,0 +1,44 @@
+        {% extends "TPapp/base.html" %}
+        {% load static %}
+        {% block content %}
+    <head>
+        <title>Login</title>
+        <link rel="stylesheet" type="text/css" href="{% static 'TPapp/css/login.css' %}">
+        <!-- <link rel='stylesheet' href="{% static 'https://cdn-uicons.flaticon.com/uicons-solid-roukcnded/css/uicons-solid-rounded.css' %}"> -->
+        <!-- <link rel='stylesheet' href="{% static 'https://cdn-uicons.flaticon.com/uicons-solid-straight/css/uicons-solid-straight.css' %}"> -->
+    </head>   
+    <body>
+        <!-- <div id="contenido">
+            <div id="contenido_sin_footer">
+                <header>
+                    <div id="logo"><img src="{% static 'TPapp/img/Logo.JPG' %}" > </img></div>       
+                        <nav id="BotoneraPrincipal">
+                            <ul>
+                                <li><span><a href="{% url 'index' %}">Home</a></span></li>
+                            </ul>
+                        </nav>
+                </header> -->
+                {% block logueo %}<a href="{% url 'index' %}">Home</a>{% endblock %}
+                {% block pagina %} {% endblock %}
+                <main>
+                <div id="principal">
+                <!--Ingresar credenciales de acceso-->
+                <form action="" id="miLogin" method="post" value="datos">
+                    {% csrf_token %}
+                    <!-- <fieldset class="LoginUser"> -->
+                        <h2><b>Ingresar al sistema</b></h2><br>
+                        <label for="email" name="NombreUsuario" id="NombreUsuario"><b>Nombre</b></label>
+                        <input type="text" name="username" id="email"><br><br>
+                        <label for="password" name="Contrasenia" id="Contrasenia"><b>Clave  </b></label>
+                        <input type="password" name="password" id="password"><br><br>
+                        <input type="submit">
+                    <!-- </fieldset> -->
+                </form>
+                </div> 
+            </div>
+            
+            {% endblock %}
+        
+        
+    </body>
+</html>

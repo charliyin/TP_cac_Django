@@ -1,0 +1,54 @@
+{% extends "TPapp/base.html" %}
+
+{% load static %}
+
+{% block content %}
+
+    <head>
+         <title>Remuneraciones</title>
+        <link rel="stylesheet" type="text/css" href="{% static 'TPapp/css/remuneraciones.css' %}">
+    </head>
+    <body>
+        <!-- <div id="contenido">
+            <div id="contenido_sin_footer">
+                <header>
+                    <div id="logo"><img src="{% static 'TPapp/img/Logo.JPG' %}"></div>      
+                        <nav id="BotoneraPrincipal">
+                            <ul>
+                                    <li id="salir"><span><a href="{%url 'index' %}">Salir</a></span></li>
+                                
+                                <li id="remuneraciones"><span><a href="{% url 'personal' %}">Personal</a></span></li>
+                            </ul>
+                        </nav>
+                </header> -->
+                <li><span>{% block pagina %}<a href="{% url 'personal' %}">Personal</a>{% endblock %}</span></li> 
+
+                <main>
+                <div id="Input">
+                    <form id="login" method="post" target="_blank" value="datos">
+                        <fieldset class="LoginUser">
+                            <input type="text" name="apellido" id="apellido" placeholder="Apellido">
+                            <input type="text" name="nombre" id="nombre" placeholder="Nombre">
+                            <input type="number" name="nroLegajo" id="nroLegajo" placeholder="Legajo">
+                            <input type="submit" value="Enviar">
+                        </fieldset>
+                    </form>
+                </div> 
+
+                {% if request.user.is_authenticated %}
+                    <h4>{{user.username | upper }}, bienvenido</h4>
+                {% endif %}
+                <hr>
+
+                <!-- {% for trabajador in trabajadores %}
+                <div id="imagen">
+                    <h2>{{trabajador.titulo}}</h2>
+                    <p>{{trabajador.contenido}}</p>
+                </div>
+                {% endfor %} -->
+                </main> 
+
+                {% endblock %}
+                <!-- <script src="{% static 'TPapp/js/remuneraciones.js' %}"></script> -->
+    </body>
+</html>

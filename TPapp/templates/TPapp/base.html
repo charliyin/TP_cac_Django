@@ -1,0 +1,36 @@
+<html>
+  <head>
+    {% load static %}
+  </head>
+<body>
+      <div id="contenido">
+        <div id="contenido_sin_footer">
+          <header>
+            <div id="logo"><img src="{% static 'TPapp/img/Logo.jpg' %}"></div>        
+              <nav id="BotoneraPrincipal">
+                <ul>
+                  {% if request.user.is_authenticated %}
+                    <li id="salir"><span><a href="{% url 'exit' %}">Salir</a></span></li>
+                    
+                  {% else %}
+                    <li><span>{% block logueo %}<a href="{% url 'login' %}">Login</a>{% endblock %}</span></li> 
+                  {% endif %}
+
+                  <li><span>{% block pagina %}<a href="{% url 'contacto' %}">Contacto</a>{% endblock %}</span></li> 
+                  
+                </ul>
+              </nav>
+          </header>
+  {% block content %}
+
+  {% endblock %}
+
+    </div>
+    <footer>
+        <article id="Pie_de_página">
+          <h5>Trabajo integrador Codo a Codo - comision 25316<br><br>Grupo nro 16</h5>
+        </article>
+    </footer>
+  </div>
+</body>
+</html>

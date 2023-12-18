@@ -1,0 +1,24 @@
+  {% extends "TPapp/base.html" %}
+
+  {% load static %}
+  
+     {% block content %} 
+
+      <!-- <title>RRHH</title> -->
+    <head>
+      <title>Home</title>
+      <link rel="stylesheet" type="text/css" href="{% static 'TPapp/css/login.css' %}">
+    </head>
+
+      <main>
+        <h1>SOMOS UNA EMPRESA DEDICADA A BRINDAR SERVICIOS DE CALIDAD <br>
+              ACORDE A LOS REQUERIMIENTOS DE NUESTROS CLIENTES</h1>
+        <h2>PARA LOGRAR ESTE OBJETIVO NECESITAMOS PERSONAS CAPACITADAS</h2>
+        <div id="principal">
+          <img id="imagen" src="{% static 'TPapp/img/agronomo1.jpg' %}" alt="Trabajadores"> <br><br>
+          <h3>Desde el área de RRHH seguimos y acompañamos tu crecimiento profesional, más allá de tus límites</h3>       
+        </div>
+      </main>
+    
+      
+      {% endblock %}

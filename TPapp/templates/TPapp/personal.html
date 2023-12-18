@@ -1,0 +1,56 @@
+<html>
+    <head>
+        {% extends "TPapp/base.html" %}
+
+        {% load static %}
+
+        {% block content %}
+
+        <title>Login</title>
+        <link rel="stylesheet" type="text/css" href="{% static 'TPapp/css/personal.css' %}">
+    </head>
+    <body>
+        <!-- <div id="contenido">
+            <div id="contenido_sin_footer">
+            <header>
+                <div id="logo"><img src="{% static 'TPapp/img/Logo.JPG' %}"></div>
+                    <nav id="BotoneraPrincipal">
+                        <ul>
+                            <li id="salir"><span><a href="{% url 'index' %}">Salir</a></span></li>
+                            <li><a href="{% url 'remuneraciones' %}">Remuneraciones</a></li>
+                        </ul>
+                    </nav>
+            </header> -->
+
+            <li><span>{% block pagina %}<a href="{% url 'remuneraciones' %}">Remuneraciones</a>{% endblock %}</span></li>
+            <main>
+                <div id="Input">
+                    <form id="login" method="post" target="_blank" value="datos">
+                        <fieldset class="LoginUser">
+                            <label for="apellido" name="Apellido" id="Apellido">Apellido</label>
+                            <input type="text" name="apellido" id="apellido"><br>
+                            <label for="nombre" name="Nombre" id="Nombre">Nombre</label>
+                            <input type="text" name="nombre" id="nombre"><br><br>
+                            <label for="nroLegajo" name="NroLegajo" id="NroLegajo">Nro Legajo</label>
+                            <input type="number" name="nroLegajo" id="nroLegajo"><br><br>
+                            <input type="submit" value="Enviar">
+                        </fieldset>
+                    </form>
+                </div>
+                <!--Menu contenedor del perfil del usuario filtrado
+                <div>
+                    <h2>Clic en la imagen para descargar CV</h2>
+                    <a href="/files/perfilcv.txt" download>
+                        <img id="imagen" src="/img/userIMG.jpg"></img>
+                    </a>
+                </div>-->
+                <div id="imagen">
+                </div>
+            </main>
+            </div>
+
+            {% endblock %}
+        </div>
+        <!-- <script src="{% static 'TPapp/js/personal.js' %}"></script> -->
+    </body>
+</html>
